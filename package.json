@@ -1,0 +1,21 @@
+{
+  "name": "factor",
+  "private": true,
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "packages/*",
+    "factor",
+    "factor/frontend"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w factor-frontend",
+    "build": "npm run compile -w factor && npm run build -w factor-frontend",
+    "build:shared": "npm run build -w @zama-season3/shared"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "installCommand": "cd ../.. && npm install",
+  "build": {
+    "env": {
+      "NEXT_IGNORE_INCORRECT_LOCKFILE": "1"
+    }
+  }
+}

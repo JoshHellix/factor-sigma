@@ -1,0 +1,371 @@
+:root {
+  --zama-bg: #0b0d10;
+  --zama-surface: #141820;
+  --zama-border: #252a33;
+  --zama-text: #edeae4;
+  --zama-muted: #8b929e;
+  --zama-accent: #c4a962;
+  --zama-accent-hover: #d4b56a;
+  --zama-ok: #6b8f71;
+  --zama-error: #b85c5c;
+  --zama-radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--zama-bg);
+  color: var(--zama-text);
+  font-family: var(--font-dm-sans, "DM Sans"), system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+}
+
+.zama-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.zama-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.zama-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.zama-tagline {
+  margin: 0.25rem 0 0;
+  color: var(--zama-muted);
+  font-size: 0.95rem;
+}
+
+.zama-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 960px) {
+  .zama-grid-2 {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.zama-panel {
+  background: var(--zama-surface);
+  border: 1px solid var(--zama-border);
+  border-radius: var(--zama-radius);
+  padding: 1.25rem;
+}
+
+.zama-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.zama-panel h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.zama-muted {
+  color: var(--zama-muted);
+  font-size: 0.875rem;
+}
+
+.zama-error {
+  color: var(--zama-error);
+  font-size: 0.875rem;
+}
+
+.zama-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 0.55rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+}
+
+.zama-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.zama-btn-primary {
+  background: var(--zama-accent);
+  color: var(--zama-bg);
+}
+
+.zama-btn-primary:hover:not(:disabled) {
+  background: var(--zama-accent-hover);
+}
+
+.zama-btn-outline {
+  background: transparent;
+  color: var(--zama-text);
+  border: 1px solid var(--zama-border);
+}
+
+.zama-btn-ghost {
+  background: transparent;
+  color: var(--zama-muted);
+}
+
+.zama-btn-sm {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.8rem;
+}
+
+.zama-input,
+select.zama-input {
+  width: 100%;
+  background: var(--zama-bg);
+  border: 1px solid var(--zama-border);
+  border-radius: 8px;
+  color: var(--zama-text);
+  padding: 0.6rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.zama-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.zama-field span {
+  font-size: 0.8rem;
+  color: var(--zama-muted);
+  font-weight: 500;
+}
+
+.zama-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.zama-connect {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.zama-badge {
+  display: inline-block;
+  background: var(--zama-bg);
+  border: 1px solid var(--zama-border);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  color: var(--zama-muted);
+}
+
+.zama-badge-ok {
+  color: var(--zama-ok);
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.zama-address {
+  font-family: ui-monospace, monospace;
+  font-size: 0.85rem;
+}
+
+.zama-table-wrap {
+  overflow-x: auto;
+}
+
+.zama-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.zama-table th,
+.zama-table td {
+  text-align: left;
+  padding: 0.65rem 0.5rem;
+  border-bottom: 1px solid var(--zama-border);
+}
+
+.zama-table tr.selected {
+  background: rgba(196, 169, 98, 0.08);
+}
+
+.zama-table code {
+  font-size: 0.8rem;
+}
+
+.zama-balance-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.zama-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.zama-tab {
+  background: transparent;
+  border: 1px solid var(--zama-border);
+  color: var(--zama-muted);
+  border-radius: 8px;
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.zama-tab.active {
+  background: transparent;
+  border-color: var(--zama-accent);
+  color: var(--zama-accent);
+}
+
+.zama-hero {
+  text-align: center;
+  padding: 2rem 0 1rem;
+}
+
+.zama-hero h1 {
+  font-size: 2.25rem;
+  margin: 0 0 0.5rem;
+}
+
+.zama-card-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.zama-stat {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--zama-accent-hover);
+}
+
+.zama-registry-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+
+.zama-registry-toggle-label {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.zama-registry-toggle-meta {
+  font-size: 0.75rem;
+  color: var(--zama-muted);
+  font-weight: 500;
+}
+
+.zama-registry-chevron {
+  margin-left: auto;
+  font-size: 0.875rem;
+  color: var(--zama-muted);
+}
+
+.zama-registry-hint {
+  margin: 0 0 0.75rem;
+  font-size: 0.8125rem;
+}
+
+.zama-registry-preview {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  border: 1px solid var(--zama-border);
+  border-radius: var(--zama-radius);
+  overflow: hidden;
+}
+
+.zama-registry-preview li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--zama-border);
+}
+
+.zama-registry-preview li:last-child {
+  border-bottom: none;
+}
+
+.zama-registry-preview li.is-selected {
+  background: rgba(196, 169, 98, 0.08);
+}
+
+.zama-registry-preview-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.zama-registry-preview-main strong {
+  font-size: 0.875rem;
+}
+
+.zama-registry-preview-main .zama-muted {
+  font-size: 0.75rem;
+  font-family: ui-monospace, monospace;
+}
+
+.zama-registry-expand {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.zama-registry-collapse {
+  margin-bottom: 0.75rem;
+}
+
+.zama-registry-is-collapsed .zama-registry-preview {
+  margin-bottom: 0.5rem;
+}
+
+.zama-registry-is-collapsed .zama-registry-expand {
+  margin-bottom: 0;
+}
+
+.zama-table-wrap-expanded {
+  max-height: min(480px, 60vh);
+  overflow: auto;
+}
